@@ -1,0 +1,25 @@
+.List {
+  width: 90%;
+  background: transparent;
+  margin: 20px;
+  text-align: center;
+  align-self: start;
+  height: 193px;
+  overflow-y: auto;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f38047;
+  background: radial-gradient(rgba(0, 0, 0, 0.3), rgb(224, 79, 12));
+  border-radius: 10px;
+}

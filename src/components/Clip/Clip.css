@@ -1,0 +1,21 @@
+.clip {
+    width: 410px;
+    height: 350px;
+    border: 5px solid #ff6b14;
+    border-radius: 20px;
+    background: radial-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.6));
+    margin: 40px;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    padding: 3px;
+}
+
+.thePlayer {
+   margin-top: 0px;
+}
+
+.react-player {
+    top: 0;
+    left: 0;
+}

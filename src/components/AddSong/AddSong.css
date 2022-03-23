@@ -1,0 +1,17 @@
+.addSongInput {
+    width: 90%;
+    height: 10%;
+    background: transparent;
+    margin: 0px 20px 10px 20px;
+    text-align: center;
+}
+
+.selectBox {
+    font-family: cursive;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-right: 2px;
+    text-overflow: ellipsis;
+    width: 75%;
+    cursor: pointer;
+}

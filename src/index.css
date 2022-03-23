@@ -1,0 +1,15 @@
+html{
+  min-height: 100%;
+}
+
+body {
+  background-image: url(playlist-background1.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 95vh;
+  display:flex;
+  align-items: center;
+  justify-content: center; 
+  font-family: cursive;
+}

@@ -1,0 +1,12 @@
+.app {
+  width: 930px;
+  height: 530px;
+  align-items: center;
+  justify-content: center;
+  background: rdial-gradient(rgba(255, 255, 255, 0.6));
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+  backdrop-filter: blur(8p);
+  color: #fff;
+}
+

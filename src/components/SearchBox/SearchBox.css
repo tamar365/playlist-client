@@ -1,0 +1,36 @@
+.searchBox {
+  width: 90%;
+  height: 10%;
+  background: transparent;
+  margin: 0px 20px 10px 20px;
+  text-align: center;
+}
+
+button {
+  z-index: 2;
+  border: none;
+  top: 2px;
+  bottom: 2px;
+  background: none;
+  margin-left: -10%;
+}
+
+input {
+  font-family: cursive;
+  text-align: left;
+  margin: 0px;
+  padding: 0px;
+  margin-left: 35px;
+}
+
+i {
+  background: transparent;
+  cursor: pointer;
+  display: contents;
+}
+
+.allTheSearchBox {
+  align-items: center;
+  position: relative;
+  display: flex;
+}
