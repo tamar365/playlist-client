@@ -31,7 +31,7 @@ function Login() {
         );
         navigate("/Home");
       } else {
-        setLoginMessage("Invalud username or password!");
+        setLoginMessage("Invalid username or password!");
       }
     } else {
       setLoginMessage("Please enter username and password");
