@@ -12,7 +12,7 @@ function Login() {
     setLoginMessage("");
     if (userNameEntered.current.value && passwordEntered.current.value) {
       const response = await fetch(
-        "https://myhitsplaylist.herokuapp.com/api/users/login",
+        "https://localhost:3002/api/users/login",
         {
           method: "POST",
           headers: { "Content-type": "application/json" },
@@ -41,7 +41,7 @@ function Login() {
   function register() {
     setLoginMessage("");
     if (userNameEntered.current.value && passwordEntered.current.value) {
-      fetch("https://myhitsplaylist.herokuapp.com/api/users/register", {
+      fetch("https://localhost:3002/api/users/register", {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify({
