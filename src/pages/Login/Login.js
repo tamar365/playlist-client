@@ -12,7 +12,7 @@ function Login() {
     setLoginMessage("");
     if (userNameEntered.current.value && passwordEntered.current.value) {
       const response = await fetch(
-        "https://localhost:3002/api/users/login",
+        "https://myhitsplaylist.herokuapp.com/api/users/login",
         {
           method: "POST",
           headers: { "Content-type": "application/json" },
@@ -24,10 +24,13 @@ function Login() {
       );
       const status = response.status;
       console.log(status);
+      console.log(response);
+      const data = await (response.json())
+      console.log(data)
       if (status === 200) {
         localStorage.setItem(
           "accessToken",
-          JSON.stringify(await response.json())
+          JSON.stringify(data)
         );
         navigate("/Home");
       } else {
@@ -41,7 +44,7 @@ function Login() {
   function register() {
     setLoginMessage("");
     if (userNameEntered.current.value && passwordEntered.current.value) {
-      fetch("https://localhost:3002/api/users/register", {
+      fetch("https://myhitsplaylist.herokuapp.com/api/users/register", {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify({
@@ -51,7 +54,7 @@ function Login() {
       })
         .then((res) => res.json())
         .then((data) => console.log(data));
-      setLoginMessage("Please click on login button");
+      setLoginMessage("Please enter the login button");
     } else {
       setLoginMessage("Please enter username and password");
     }

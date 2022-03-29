@@ -10,7 +10,7 @@ function App() {
 
   try {
     useEffect(() => {
-      fetch("https://localhost:3002/api/playlists", {
+      fetch("https://myhitsplaylist.herokuapp.com/api/playlists", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -29,7 +29,7 @@ function App() {
   }
 
   const getSongs = (userInput) => {
-    fetch(`https://localhost:3002/api/search/${userInput}`)
+    fetch(`https://myhitsplaylist.herokuapp.com/api/search/${userInput}`)
       .then((response) => response.json())
       .then((data) =>
         setSongs(
@@ -55,7 +55,7 @@ function App() {
   const newSongFunc = (poem) => {
     const songName = poem.split("%")[0];
     const id = poem.split("%")[1];
-    fetch("https://localhost:3002/api/songs/newsong", {
+    fetch("https://myhitsplaylist.herokuapp.com/api/songs/newsong", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -66,7 +66,7 @@ function App() {
       .then((response) => response.json())
       .then((data) =>
         fetch(
-          "https://localhost:3002/api/playlists/addToPlaylist",
+          "https://myhitsplaylist.herokuapp.com/api/playlists/addToPlaylist",
           {
             method: "POST",
             headers: {
@@ -82,7 +82,7 @@ function App() {
   };
 
   const removeSongFunc = (id) => {
-    fetch(`https://localhost:3002/api/playlists/${id}`, {
+    fetch(`https://myhitsplaylist.herokuapp.com/api/playlists/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
