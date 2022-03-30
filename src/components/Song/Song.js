@@ -1,6 +1,13 @@
 import "./Song.css";
+import { useContext } from "react";
+import removeSongFuncContext from "../../contexts/removeSongFuncContext";
+import addToPlaylistFuncContext from "../../contexts/addToPlaylistFuncContext";
 
-const Song = ({ songName, id, removeSongFunc, addToPlayListFunc }) => {
+const Song = ({ songName, id }) => {
+  const getContext = useContext(removeSongFuncContext);
+  const removeSongFunc = getContext.removeSongFunc;
+  const getContext2 = useContext(addToPlaylistFuncContext);
+  const addToPlayListFunc = getContext2.addToPlayListFunc;
   
   return (
     <div className="song">

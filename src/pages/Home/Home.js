@@ -2,6 +2,14 @@ import "./Home.css";
 import Header from "../../components/Header/Header";
 import { useEffect, useState } from "react";
 import Board from "../../components/Board/Board";
+import idVideoContext from "../../contexts/idVideoContext";
+import addSongFuncContext from "../../contexts/addSongFuncContext";
+import songsContext from "../../contexts/songsContext";
+import addToPlaylistFuncContext from "../../contexts/addToPlaylistFuncContext"
+import chosenSongsContext from "../../contexts/chosenSongsContext";
+import getSongsContext from "../../contexts/getSongsContext";
+import newSongFuncContext from "../../contexts/newSongFuncContext";
+import removeSongFuncContext from "../../contexts/removeSongFuncContext";
 
 function App() {
   const [chosenSongs, setChosenSongs] = useState([]);
@@ -103,16 +111,23 @@ function App() {
   return (
     <div className="app">
       <Header />
-      <Board
-        idVideo={idVideo}
-        songs={songs}
-        addToPlayListFunc={addToPlayListFunc}
-        addSongFunc={addSongFunc}
-        chosenSongs={chosenSongs}
-        removeSongFunc={removeSongFunc}
-        getSongs={getSongs}
-        newSongFunc={newSongFunc}
-      />
+      <idVideoContext.Provider value={{idVideo:idVideo}}>
+      <addSongFuncContext.Provider value={{addSongFunc:addSongFunc}}> 
+      <songsContext.Provider value={{songs:songs}}>
+      <addToPlaylistFuncContext.Provider value={{addToPlayListFunc:addToPlayListFunc}}>
+      <chosenSongsContext.Provider value={{ chosenSongs:chosenSongs}}>
+      <removeSongFuncContext.Provider value={{removeSongFunc:removeSongFunc}}>
+      <getSongsContext.Provider value={{getSongs:getSongs}}>
+      <newSongFuncContext.Provider value={{newSongFunc:newSongFunc}}>  
+      <Board/>
+      </newSongFuncContext.Provider>
+      </getSongsContext.Provider>
+      </removeSongFuncContext.Provider> 
+      </chosenSongsContext.Provider>   
+      </addToPlaylistFuncContext.Provider> 
+      </songsContext.Provider>
+      </addSongFuncContext.Provider> 
+      </idVideoContext.Provider>
     </div>
   );
 }

@@ -1,10 +1,13 @@
 import "./SearchBox.css";
-import {useRef} from 'react';
+import {useRef, useContext} from 'react';
+import getSongsContext from "../../contexts/getSongsContext";
 
-function SearchBox({getSongs}) {
-
+function SearchBox() {
+ const getContext = useContext(getSongsContext)
+ const getSongs = getContext.getSongs
  const searchInputRef = useRef();   
-    return (
+   
+ return (
         <div className="searchBox">
             <label>Search a song:</label>
             <div className="allTheSearchBox">

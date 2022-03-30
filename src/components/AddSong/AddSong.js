@@ -1,6 +1,16 @@
 import "./AddSong.css";
+import { useContext } from "react";
+import songsContext from "../../contexts/songsContext";
+import addSongFuncContext from "../../contexts/addSongFuncContext";
+import newSongFuncContext from "../../contexts/newSongFuncContext";
 
-function AddSong({ songs, addSongFunc, chosenSongs, addToPlayListFunc, newSongFunc }) {
+function AddSong() {
+  const getContext = useContext(songsContext);
+  const songs = getContext.songs;
+  const getContext2 = useContext(addSongFuncContext);
+  const addSongFunc = getContext2.addSongFunc;
+  const getContext3 = useContext(newSongFuncContext);
+  const newSongFunc = getContext3.newSongFunc; 
   
   return (
     <div className="addSongInput">
