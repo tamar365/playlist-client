@@ -12,7 +12,7 @@ function Login() {
     setLoginMessage("");
     if (userNameEntered.current.value && passwordEntered.current.value) {
       const response = await fetch(
-        "https://myhitsplaylist.herokuapp.com/api/users/login",
+        "https://playlist-backend-qwwb.onrender.com/api/users/login",
         {
           method: "POST",
           headers: { "Content-type": "application/json" },
@@ -25,12 +25,9 @@ function Login() {
       const status = response.status;
       console.log(status);
       console.log(response);
-      const data = await (response.json())
+      const data = await response.json();
       if (status === 200) {
-        localStorage.setItem(
-          "accessToken",
-          JSON.stringify(data)
-        );
+        localStorage.setItem("accessToken", JSON.stringify(data));
         navigate("/Home");
       } else {
         setLoginMessage("Invalid username or password!");
@@ -43,7 +40,7 @@ function Login() {
   function register() {
     setLoginMessage("");
     if (userNameEntered.current.value && passwordEntered.current.value) {
-      fetch("https://myhitsplaylist.herokuapp.com/api/users/register", {
+      fetch("https://playlist-backend-qwwb.onrender.com/api/users/register", {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify({

@@ -5,7 +5,7 @@ import Board from "../../components/Board/Board";
 import idVideoContext from "../../contexts/idVideoContext";
 import addSongFuncContext from "../../contexts/addSongFuncContext";
 import songsContext from "../../contexts/songsContext";
-import addToPlaylistFuncContext from "../../contexts/addToPlaylistFuncContext"
+import addToPlaylistFuncContext from "../../contexts/addToPlaylistFuncContext";
 import chosenSongsContext from "../../contexts/chosenSongsContext";
 import getSongsContext from "../../contexts/getSongsContext";
 import newSongFuncContext from "../../contexts/newSongFuncContext";
@@ -18,7 +18,7 @@ function App() {
 
   try {
     useEffect(() => {
-      fetch("https://myhitsplaylist.herokuapp.com/api/playlists", {
+      fetch("https://playlist-backend-qwwb.onrender.com/api/playlists", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -37,7 +37,7 @@ function App() {
   }
 
   const getSongs = (userInput) => {
-    fetch(`https://myhitsplaylist.herokuapp.com/api/search/${userInput}`)
+    fetch(`https://playlist-backend-qwwb.onrender.com/api/search/${userInput}`)
       .then((response) => response.json())
       .then((data) =>
         setSongs(
@@ -63,7 +63,7 @@ function App() {
   const newSongFunc = (poem) => {
     const songName = poem.split("%")[0];
     const id = poem.split("%")[1];
-    fetch("https://myhitsplaylist.herokuapp.com/api/songs/newsong", {
+    fetch("https://playlist-backend-qwwb.onrender.com/api/songs/newsong", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -74,7 +74,7 @@ function App() {
       .then((response) => response.json())
       .then((data) =>
         fetch(
-          "https://myhitsplaylist.herokuapp.com/api/playlists/addToPlaylist",
+          "https://playlist-backend-qwwb.onrender.com/api/playlists/addToPlaylist",
           {
             method: "POST",
             headers: {
@@ -90,7 +90,7 @@ function App() {
   };
 
   const removeSongFunc = (id) => {
-    fetch(`https://myhitsplaylist.herokuapp.com/api/playlists/${id}`, {
+    fetch(`https://playlist-backend-qwwb.onrender.com/api/playlists/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -111,22 +111,28 @@ function App() {
   return (
     <div className="app">
       <Header />
-      <idVideoContext.Provider value={{idVideo:idVideo}}>
-      <addSongFuncContext.Provider value={{addSongFunc:addSongFunc}}> 
-      <songsContext.Provider value={{songs:songs}}>
-      <addToPlaylistFuncContext.Provider value={{addToPlayListFunc:addToPlayListFunc}}>
-      <chosenSongsContext.Provider value={{ chosenSongs:chosenSongs}}>
-      <removeSongFuncContext.Provider value={{removeSongFunc:removeSongFunc}}>
-      <getSongsContext.Provider value={{getSongs:getSongs}}>
-      <newSongFuncContext.Provider value={{newSongFunc:newSongFunc}}>  
-      <Board/>
-      </newSongFuncContext.Provider>
-      </getSongsContext.Provider>
-      </removeSongFuncContext.Provider> 
-      </chosenSongsContext.Provider>   
-      </addToPlaylistFuncContext.Provider> 
-      </songsContext.Provider>
-      </addSongFuncContext.Provider> 
+      <idVideoContext.Provider value={{ idVideo: idVideo }}>
+        <addSongFuncContext.Provider value={{ addSongFunc: addSongFunc }}>
+          <songsContext.Provider value={{ songs: songs }}>
+            <addToPlaylistFuncContext.Provider
+              value={{ addToPlayListFunc: addToPlayListFunc }}
+            >
+              <chosenSongsContext.Provider value={{ chosenSongs: chosenSongs }}>
+                <removeSongFuncContext.Provider
+                  value={{ removeSongFunc: removeSongFunc }}
+                >
+                  <getSongsContext.Provider value={{ getSongs: getSongs }}>
+                    <newSongFuncContext.Provider
+                      value={{ newSongFunc: newSongFunc }}
+                    >
+                      <Board />
+                    </newSongFuncContext.Provider>
+                  </getSongsContext.Provider>
+                </removeSongFuncContext.Provider>
+              </chosenSongsContext.Provider>
+            </addToPlaylistFuncContext.Provider>
+          </songsContext.Provider>
+        </addSongFuncContext.Provider>
       </idVideoContext.Provider>
     </div>
   );
