@@ -1,6 +1,17 @@
-# Getting Started with Create React App
+# My Playlist App 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to my playlist app! This is a web application that allows you to search for songs from YouTube and save them to your personal playlist.
+
+## Description
+
+My Playlist App is a web application built using [React, Node.js, MongoDB]. It provides a user-friendly interface for searching songs on YouTube and creating a personalized playlist. Opem your web browser (in desktop) and visit: https://myhitsplaylist.netlify.app/
+
+## Features
+
+- Search for songs on YouTube: Enter keywords or the title of a song to search for and retrieve relevant results from YouTube.
+- Add songs to your playlist: Select the desired songs from the search results and add them to your personal playlist.
+- Play songs within the app: Listen to your favorite songs directly within the application's built-in player.
+- You can remove songs from your playlist: Easily manage your playlist by removing songs as needed.
 
 ## Available Scripts
 
