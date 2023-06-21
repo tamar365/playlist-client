@@ -4,7 +4,7 @@ Welcome to my playlist app! This is a web application that allows you to search 
 
 ## Description
 
-My Playlist App is a web application built using [React, Node.js, MongoDB]. It provides a user-friendly interface for searching songs on YouTube and creating a personalized playlist. Opem your web browser (in desktop) and visit: https://myhitsplaylist.netlify.app/
+My Playlist App is a web application built, using the technologies in this FRONTEND repository: React, CSS, HTML. In the further repository of the BACKEND, which includes the technologies: Node.js, MongoDB and YuoTube API . It provides a user-friendly interface for searching songs on YouTube and creating a personalized playlist. Opem your web browser (in desktop) and visit: https://myhitsplaylist.netlify.app/
 
 ## Features
 
