@@ -1,6 +1,6 @@
-import "./Login.css";
+import "./Register.css";
 import { useRef, useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const userNameEntered = useRef("");
@@ -60,7 +60,7 @@ function Login() {
     <div className="login">
       <div className="inputFields">
         <div className="title">
-          <h1>LOGIN</h1>
+          <h1>REGISTER</h1>
         </div>
         <div className="inputsContainer">
         <input
@@ -75,11 +75,13 @@ function Login() {
           ref={passwordEntered}
           placeholder="Enter password"
         />
-         <button type="button" className="loginButton" onClick={login1}>
-          Sign In
+         <button type="button" className="registerButton" onClick={login1}>
+          Sign Up
         </button>
         </div>
-        <h4 className="smallTitle">Don't have an account? <Link to="/Register" className="signUp">Sign up</Link></h4>
+        {/* <button type="button" className="registerButton" onClick={register}>
+          Sign Up
+        </button> */}
         <p className="errorMessage">{loginMessage}</p>
       </div>
     </div>
