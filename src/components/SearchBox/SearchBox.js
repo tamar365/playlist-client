@@ -12,7 +12,7 @@ function SearchBox() {
             <label>Search a song:</label>
             <div className="allTheSearchBox">
                <input className="inputBox" type="text" ref={searchInputRef}/>
-               <button type="submit" onClick={() => getSongs(searchInputRef.current.value)}><i className="fa fa-search"></i>
+               <button type="submit" className="searchBtn" onClick={() => getSongs(searchInputRef.current.value)}><i className="fa fa-search"></i>
                </button>
             </div>
         </div>

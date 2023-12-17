@@ -2,32 +2,35 @@
     width: 60%;
     background-color: #ff6b14;
     text-align: center;
-    font-size: 25px;
-    padding: 10px 20px;
+    font-size: 1.8rem;
+    padding: 1.5vh 2vw;
     border-top-left-radius: 20px;
     border-bottom-right-radius: 20px;
+    justify-content: center;
 }
 
 .logout {
     align-items:center;
     font-family: 'Patrick Hand', cursive;
     font-weight: bold;
-    font-size: large;
+    font-size: 1.2rem;
     display: flex;
-    margin-left: 740px;
-    margin-bottom: 40px;
-    margin-top: -55px;
+    margin-left: 66vw;
+    margin-bottom: 7vh;
+    margin-top: -58px;
     width: auto;
-    height: 30px;
-    background: rdial-gradient(rgba(255, 255, 255, 0.6));
+    height: 7vh;
+    background: radial-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.6));
     box-shadow: 0 0 7px rgba(255, 255, 255, 0.6);
     border-radius: 10px;
+    border: none;
     backdrop-filter: blur(10p);
     cursor: pointer;
-
+    color: #ff6b14;
+    z-index: 10;
 }
 
-button:active {
+.logout:active {
     background: #e5e5e5;
     -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
     -moz-box-shadow: inset 0px 0px 5px #c1c1c1;

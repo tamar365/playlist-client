@@ -1,14 +1,13 @@
 .clip {
-    width: 410px;
-    height: 350px;
+    width: 25vw;
+    height: 49vh;
     border: 5px solid #ff6b14;
     border-radius: 20px;
     background: radial-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.6));
-    margin: 40px;
     align-items: center;
     text-align: center;
     overflow: hidden;
-    padding: 3px;
+    padding: 3vh;
 }
 
 .thePlayer {

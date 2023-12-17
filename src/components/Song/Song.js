@@ -15,10 +15,10 @@ const Song = ({ songName, id }) => {
         <h4 className="songName">{songName}</h4>
       </div>
       <div className="handleSong">
-        <button onClick={() => removeSongFunc(id)}>
+        <button className="removeSongBtn" onClick={() => removeSongFunc(id)}>
           <i className="fas fa-trash"></i>
         </button>
-        <button onClick={() => addToPlayListFunc(id)}>
+        <button className="addSongBtn" onClick={() => addToPlayListFunc(id)}>
           <i className="fas fa-play"></i>
         </button>
       </div>

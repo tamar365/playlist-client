@@ -11,6 +11,7 @@ function Login() {
   async function login1() {
     setLoginMessage("");
     if (userNameEntered.current.value && passwordEntered.current.value) {
+      console.log(userNameEntered.current.value, passwordEntered.current.value)
       const response = await fetch(
         "https://playlist-backend-qwwb.onrender.com/api/users/login",
         {
@@ -32,25 +33,6 @@ function Login() {
       } else {
         setLoginMessage("Invalid username or password!");
       }
-    } else {
-      setLoginMessage("Please enter username and password");
-    }
-  }
-
-  function register() {
-    setLoginMessage("");
-    if (userNameEntered.current.value && passwordEntered.current.value) {
-      fetch("https://playlist-backend-qwwb.onrender.com/api/users/register", {
-        method: "POST",
-        headers: { "Content-type": "application/json" },
-        body: JSON.stringify({
-          username: userNameEntered.current.value,
-          password: passwordEntered.current.value,
-        }),
-      })
-        .then((res) => res.json())
-        .then((data) => console.log(data));
-      setLoginMessage("Please enter the login button");
     } else {
       setLoginMessage("Please enter username and password");
     }
@@ -79,8 +61,8 @@ function Login() {
           Sign In
         </button>
         </div>
-        <h4 className="smallTitle">Don't have an account? <Link to="/Register" className="signUp">Sign up</Link></h4>
         <p className="errorMessage">{loginMessage}</p>
+        <h4 className="smallTitle">Don't have an account? <Link to="/Register" className="signUp">Sign up</Link></h4>
       </div>
     </div>
   );
