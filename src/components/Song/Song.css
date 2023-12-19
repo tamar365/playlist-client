@@ -36,7 +36,8 @@
 
 @media screen and (min-aspect-ratio: 16/9) {
   .song {
-    height: 4vh;
+    height: 9vh;
+    font-size: 70%;
   }
 
 }
