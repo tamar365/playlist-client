@@ -12,7 +12,8 @@
         padding: 3vh;
     }
 
-    .additemform, .clip {
-        margin: 1.5vh 0; 
+    .additemform,
+    .clip {
+        margin: 1.5vh 0;
     }
 }

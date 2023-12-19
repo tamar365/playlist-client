@@ -4,9 +4,11 @@ import Clip from "../Clip/Clip";
 
 function Board() {
   return (
+    <div className="board_container">
     <div className="board">
       <AddItemForm />
       <Clip />
+    </div>
     </div>
   );
 }

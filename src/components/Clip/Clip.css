@@ -47,6 +47,8 @@
 @media screen and (min-aspect-ratio: 16/9) {
     .clip {
         border: 2px solid #ff6b14;
+        height: 65vh;
+        width:35vw;
     }
 
     .youtubeImg {

@@ -33,5 +33,7 @@ h4 {
 @media screen and (min-aspect-ratio: 16/9) {
     .additemform {
         border: 2px solid #ff6b14;
+        height: 65vh;
+        width:35vw;
     }
 }

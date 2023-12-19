@@ -68,6 +68,7 @@
     .header {
         font-size: 1.4rem;
         padding: 1.3vh 2vw;
+        margin: 0;
     }
 
     .logout_container {
@@ -79,6 +80,7 @@
 
     .header_container {
         width: 90vw;
+        margin-top:0;
     }
 
     .logout {
@@ -86,4 +88,6 @@
         height: 8vh;
     }
 }
+
+
 
