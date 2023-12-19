@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  background-image: url(playlist-background1.jpg);
+  background-image: url(./assets/playlist-background1.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -12,4 +12,15 @@ body {
   align-items: center;
   justify-content: center;
   font-family: 'Patrick Hand', cursive;
+}
+
+@media screen and (max-width: 380px) {
+  
+  html{
+    min-height: 100%;
+  }
+
+  body {
+    height: 89vh;
+  }
 }

@@ -3,8 +3,8 @@
   height: 30px;
   text-align: center;
   align-items: center;
-  display: grid;
-  grid-template-columns: 3fr 1fr;
+  display: flex;
+  justify-content:space-between;
   font-size: 80%;
 }
 
@@ -13,6 +13,7 @@
   border: none;
   background: none;
   color: #ff6b14;
+  cursor: pointer;
 }
 
 .songName {
@@ -20,4 +21,22 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+@media screen and (max-width: 380px) {
+  .song {
+    height: 4vh;
+  }
+
+  .songName {
+    width: 38vw;
+  }
+
+}
+
+@media screen and (min-aspect-ratio: 16/9) {
+  .song {
+    height: 4vh;
+  }
+
 }

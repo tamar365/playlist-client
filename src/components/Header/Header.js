@@ -16,7 +16,9 @@ function Header() {
   return (
     <div className="header_container">
       <h1 className="header">{decoded.username}'s PLAYLIST</h1>
+      <div className="logout_container">
       <button className="logout" onClick={logout}>Logout</button>
+      </div>
     </div>
   );
 }

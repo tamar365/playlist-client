@@ -10,11 +10,13 @@ import chosenSongsContext from "../../contexts/chosenSongsContext";
 import getSongsContext from "../../contexts/getSongsContext";
 import newSongFuncContext from "../../contexts/newSongFuncContext";
 import removeSongFuncContext from "../../contexts/removeSongFuncContext";
+import isVideoPlayedContext from "../../contexts/isVideoPlayedContext";
 
 function App() {
   const [chosenSongs, setChosenSongs] = useState([]);
   const [idVideo, setIdVideo] = useState("");
   const [songs, setSongs] = useState([]);
+  const [isVideoPlayed, setIsVideoPlayed] = useState(false);
 
   try {
     useEffect(() => {
@@ -105,35 +107,40 @@ function App() {
   };
 
   const addToPlayListFunc = (id) => {
+    setIsVideoPlayed(true);
     setIdVideo(id);
   };
 
   return (
     <div className="app">
       <Header />
-      <idVideoContext.Provider value={{ idVideo: idVideo }}>
-        <addSongFuncContext.Provider value={{ addSongFunc: addSongFunc }}>
-          <songsContext.Provider value={{ songs: songs }}>
-            <addToPlaylistFuncContext.Provider
-              value={{ addToPlayListFunc: addToPlayListFunc }}
-            >
-              <chosenSongsContext.Provider value={{ chosenSongs: chosenSongs }}>
-                <removeSongFuncContext.Provider
-                  value={{ removeSongFunc: removeSongFunc }}
+      <isVideoPlayedContext.Provider value={{ isVideoPlayed: isVideoPlayed }}>
+        <idVideoContext.Provider value={{ idVideo: idVideo }}>
+          <addSongFuncContext.Provider value={{ addSongFunc: addSongFunc }}>
+            <songsContext.Provider value={{ songs: songs }}>
+              <addToPlaylistFuncContext.Provider
+                value={{ addToPlayListFunc: addToPlayListFunc }}
+              >
+                <chosenSongsContext.Provider
+                  value={{ chosenSongs: chosenSongs }}
                 >
-                  <getSongsContext.Provider value={{ getSongs: getSongs }}>
-                    <newSongFuncContext.Provider
-                      value={{ newSongFunc: newSongFunc }}
-                    >
-                      <Board />
-                    </newSongFuncContext.Provider>
-                  </getSongsContext.Provider>
-                </removeSongFuncContext.Provider>
-              </chosenSongsContext.Provider>
-            </addToPlaylistFuncContext.Provider>
-          </songsContext.Provider>
-        </addSongFuncContext.Provider>
-      </idVideoContext.Provider>
+                  <removeSongFuncContext.Provider
+                    value={{ removeSongFunc: removeSongFunc }}
+                  >
+                    <getSongsContext.Provider value={{ getSongs: getSongs }}>
+                      <newSongFuncContext.Provider
+                        value={{ newSongFunc: newSongFunc }}
+                      >
+                        <Board />
+                      </newSongFuncContext.Provider>
+                    </getSongsContext.Provider>
+                  </removeSongFuncContext.Provider>
+                </chosenSongsContext.Provider>
+              </addToPlaylistFuncContext.Provider>
+            </songsContext.Provider>
+          </addSongFuncContext.Provider>
+        </idVideoContext.Provider>
+      </isVideoPlayedContext.Provider>
     </div>
   );
 }

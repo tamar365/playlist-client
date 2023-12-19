@@ -101,9 +101,9 @@ button:active {
   justify-content: center;
 }
 
-@media screen and (max-width: 374px) {
+@media screen and (max-width: 380px) {
   .login {
-    margin-top: 3vh;
+    margin: auto;
     height: auto;
     width: 60vw;
     display: flex;
@@ -143,7 +143,7 @@ button:active {
   }
 
   .smallTitle {
-    font-size: 2rem;
+    font-size: 1.1rem;
     margin-top: 5vh;
   }
 

@@ -1,4 +1,18 @@
 .board {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
+    align-items: center;
+    padding: 5vh;
+}
+
+@media screen and (max-width: 380px) {
+    .board {
+        flex-direction: column;
+        padding: 3vh;
+    }
+
+    .additemform, .clip {
+        margin: 1.5vh 0; 
+    }
 }

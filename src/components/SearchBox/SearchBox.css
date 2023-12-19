@@ -5,7 +5,7 @@
   width: 20vw;
 }
 
-.searchBtn  {
+.searchBtn {
   position: absolute;
   right: 0;
   border: none;
@@ -16,13 +16,34 @@
 
 .allTheSearchBox {
   position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Patrick Hand', cursive;
-    text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Patrick Hand', cursive;
+  text-align: left;
 }
 
 .inputBox {
   width: 20vw;
+}
+
+input {
+  font-family: 'Patrick Hand', cursive;
+}
+
+@media screen and (max-width: 380px) {
+  .searchLabel {
+    font-size: 0.9rem;
+  }
+
+  .searchBox {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 80%;
+  }
+
+  .inputBox {
+    width: 94%;
+  }
 }

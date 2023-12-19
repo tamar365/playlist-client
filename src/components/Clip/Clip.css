@@ -1,20 +1,56 @@
 .clip {
-    width: 25vw;
-    height: 49vh;
+    width: 30vw;
+    height: 55vh;
     border: 5px solid #ff6b14;
     border-radius: 20px;
-    background: radial-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.6));
+    background: radial-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6));
     align-items: center;
     text-align: center;
     overflow: hidden;
-    padding: 3vh;
+    display: flex;
+    justify-content: center;
 }
 
 .thePlayer {
-   margin-top: 0px;
+    margin-top: 0px;
+    top: 0;
+    left: 0;
+    width: 110%;
+    height: 110%;
 }
 
 .react-player {
     top: 0;
     left: 0;
+}
+
+.youtubeImg {
+    width: 100%;
+    height: auto;
+    z-index: 10;
+}
+
+@media screen and (max-width: 380px) {
+    .clip {
+        width: 60vw;
+        height: 20vh;
+        border: 2px solid #ff6b14;
+        padding: 0;
+    }
+
+    .youtubeImg {
+        width: 50%;
+        height: auto;
+    }
+}
+
+@media screen and (min-aspect-ratio: 16/9) {
+    .clip {
+        border: 2px solid #ff6b14;
+    }
+
+    .youtubeImg {
+        width: 60%;
+        height: auto;
+    }
 }

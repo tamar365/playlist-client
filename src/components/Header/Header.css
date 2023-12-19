@@ -1,5 +1,18 @@
+.header_container {
+    display: flex;
+    width: 75vw;
+}
+
+.logout_container {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 2vw;
+}
+
 .header {
-    width: 60%;
+    flex: 2;
     background-color: #ff6b14;
     text-align: center;
     font-size: 1.8rem;
@@ -7,17 +20,14 @@
     border-top-left-radius: 20px;
     border-bottom-right-radius: 20px;
     justify-content: center;
+    margin: 0;
 }
 
 .logout {
-    align-items:center;
+    align-items: center;
     font-family: 'Patrick Hand', cursive;
     font-weight: bold;
     font-size: 1.2rem;
-    display: flex;
-    margin-left: 66vw;
-    margin-bottom: 7vh;
-    margin-top: -58px;
     width: auto;
     height: 7vh;
     background: radial-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.6));
@@ -36,4 +46,28 @@
     -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
     box-shadow: inset 0px 0px 5px #c1c1c1;
     outline: none;
-  }
+}
+
+@media screen and (max-width: 380px) {
+
+    .header {
+        font-size: 1.3rem;
+        padding: 1.3vh 1.8vw;
+        border-top-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        justify-content: center;
+    }
+
+    .logout {
+        font-size: 1.1rem;
+        height: 4vh;
+    }
+}
+
+@media screen and (min-aspect-ratio: 16/9) {
+    .header {
+        font-size: 1.4rem;
+        padding: 1.3vh 2vw;
+    }
+}
+

@@ -1,5 +1,5 @@
 import "./Song.css";
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import removeSongFuncContext from "../../contexts/removeSongFuncContext";
 import addToPlaylistFuncContext from "../../contexts/addToPlaylistFuncContext";
 
@@ -8,19 +8,43 @@ const Song = ({ songName, id }) => {
   const removeSongFunc = getContext.removeSongFunc;
   const getContext2 = useContext(addToPlaylistFuncContext);
   const addToPlayListFunc = getContext2.addToPlayListFunc;
-  
+
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 380);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 380);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const handleSongClick = () => {
+    if (isMobile) {
+      addToPlayListFunc(id);
+    }
+  };
+
   return (
     <div className="song">
       <div>
-        <h4 className="songName">{songName}</h4>
+        <h4 className="songName" onClick={handleSongClick}>
+          {songName}
+        </h4>
       </div>
       <div className="handleSong">
         <button className="removeSongBtn" onClick={() => removeSongFunc(id)}>
           <i className="fas fa-trash"></i>
         </button>
-        <button className="addSongBtn" onClick={() => addToPlayListFunc(id)}>
-          <i className="fas fa-play"></i>
-        </button>
+        {!isMobile && (
+          <button className="addSongBtn" onClick={() => addToPlayListFunc(id)}>
+            <i className="fas fa-play"></i>
+          </button>
+        )}
       </div>
     </div>
   );

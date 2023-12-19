@@ -14,7 +14,7 @@ function AddSong() {
   
   return (
     <div className="addSongInput">
-      <label>Choose a song:</label>
+      <label className="chooseSongLabel">Choose a song:</label>
       <select
         className="selectBox"
         onChange={(e) => {addSongFunc(e.target.value); newSongFunc(e.target.value);}}

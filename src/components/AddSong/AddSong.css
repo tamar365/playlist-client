@@ -17,3 +17,14 @@
     width: 20vw;
     cursor: pointer;
 }
+
+@media screen and (max-width: 380px) {
+    .chooseSongLabel{
+        font-size: 0.9rem;
+        margin-top: 1vh;
+    }
+
+    .selectBox{
+        width: 80%;
+    }
+}
