@@ -28,3 +28,14 @@
         width: 80%;
     }
 }
+
+@media screen and (min-aspect-ratio: 16/9) {
+    .chooseSongLabel{
+        font-size: 0.9rem;
+        margin-top: 1vh;
+    }
+
+    .selectBox{
+        width: 78%;
+    }
+}
