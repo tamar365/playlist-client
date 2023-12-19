@@ -47,3 +47,18 @@ input {
     width: 94%;
   }
 }
+
+@media screen and (min-aspect-ratio: 16/9) {
+  .searchBox {
+    width: 80%;
+    /* height: 4vh; */
+  }
+
+  .inputBox{
+    width: 92%;
+  }
+
+  .searchLabel {
+    font-size: 0.9rem;
+  }
+}
