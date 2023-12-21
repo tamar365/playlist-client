@@ -9,11 +9,17 @@ const Song = ({ songName, id }) => {
   const getContext2 = useContext(addToPlaylistFuncContext);
   const addToPlayListFunc = getContext2.addToPlayListFunc;
 
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 380 ||  window.matchMedia("(orientation: landscape)").matches);
+  const [isMobile, setIsMobile] = useState(
+    window.innerWidth <= 380 ||
+      window.matchMedia("(orientation: landscape)").matches
+  );
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 380 ||  window.matchMedia("(orientation: landscape)").matches);
+      setIsMobile(
+        window.innerWidth <= 380 ||
+          window.matchMedia("(orientation: landscape)").matches
+      );
     };
 
     window.addEventListener("resize", handleResize);
@@ -23,17 +29,18 @@ const Song = ({ songName, id }) => {
     };
   }, []);
 
-  const handleSongClick = () => {
+  const handleSongClick = (e) => {
     if (isMobile) {
+      e.stopPropagation();
       addToPlayListFunc(id);
     }
   };
 
   return (
     <div className="song">
-        <h4 className="songName" onClick={handleSongClick}>
-          {songName}
-        </h4>
+      <h4 className="songName" onClick={(e) => handleSongClick(e)}>
+        {songName}
+      </h4>
       <div className="handleSong">
         <button className="removeSongBtn" onClick={() => removeSongFunc(id)}>
           <i className="fas fa-trash"></i>

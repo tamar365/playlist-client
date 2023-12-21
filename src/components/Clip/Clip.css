@@ -48,11 +48,12 @@
     .clip {
         border: 2px solid #ff6b14;
         height: 65vh;
-        width:35vw;
+        width: 35vw;
     }
 
     .youtubeImg {
         width: 60%;
         height: auto;
     }
+
 }
