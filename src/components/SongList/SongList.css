@@ -24,13 +24,18 @@
   border-radius: 10px;
 }
 
-@media screen and (min-aspect-ratio: 16/9) {
+@media screen and (min-aspect-ratio: 16/9) and (orientation: landscape) {
   .List {
     width: 28vw;
     margin: 4vh 4vw;
+    height: 30vh;
   }
 
-  /* .List::-webkit-scrollbar-thumb {
-    margin-left:2vw;
-  } */
+}
+@media screen and (max-width: 380px) {
+  .List {
+    margin: 2vh 4vw;
+    height: 13vh;
+  }
+
 }
