@@ -1,14 +1,15 @@
 .song {
   width: 100%;
-  height: 30px;
+  height: 11vh;
   text-align: center;
   align-items: center;
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
   font-size: 80%;
 }
 
-.removeSongBtn, .addSongBtn {
+.removeSongBtn,
+.addSongBtn {
   font-size: 0.8rem;
   border: none;
   background: none;
@@ -34,7 +35,7 @@
 
 }
 
-@media screen and (min-aspect-ratio: 16/9) and (orientation: landscape) {
+@media screen and (max-width: 767px) and (orientation: landscape) {
   .song {
     height: 9vh;
     font-size: 70%;
