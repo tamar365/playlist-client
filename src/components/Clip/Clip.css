@@ -25,7 +25,7 @@
 }
 
 .youtubeImg {
-    width: 100%;
+    width: 75%;
     height: auto;
     z-index: 10;
 }
@@ -44,7 +44,7 @@
     }
 }
 
-@media screen and (min-aspect-ratio: 16/9) {
+@media screen and (max-width: 767px) and (orientation: landscape) {
     .clip {
         border: 2px solid #ff6b14;
         height: 65vh;
