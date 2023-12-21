@@ -63,6 +63,12 @@
         font-size: 1.1rem;
         height: 4vh;
     }
+
+    .header_container {
+        display: flex;
+        width: 74vw;
+        margin-top: 0;
+    }
 }
 
 

@@ -4,7 +4,7 @@
   margin: 5%;
   text-align: center;
   align-self: start;
-  height: 193px;
+  height: 30vh;
   overflow-y: auto;
   cursor: pointer;
 }
@@ -24,11 +24,11 @@
   border-radius: 10px;
 }
 
-@media screen and (min-aspect-ratio: 16/9) and (orientation: landscape) {
+@media screen and (max-width: 767px) and (orientation: landscape) {
   .List {
     width: 28vw;
     margin: 4vh 4vw;
-    height: 30vh;
+    height: 17vh;
   }
 
 }
