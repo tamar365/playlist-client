@@ -24,16 +24,11 @@ function Login() {
         }),
       });
       const status = response.status;
-      // console.log("🚀 ~ file: Register.js:23 ~ register ~ response:", response)
-      // console.log("🚀 ~ file: Register.js:23 ~ register ~ status:", status)
       const data = await response.json();
-      console.log("🚀 ~ file: Register.js:26 ~ register ~ data:", data)
-      console.log("response:",response)
       if (status === 200) {
         localStorage.setItem("accessToken", JSON.stringify(data));
         navigate("/Home");
       } else {
-        console.log("message:", data.message)
         setLoginMessage("Invalid username or password!");
       }
     } else {
@@ -54,7 +49,7 @@ function Login() {
       </div>
       <div className="inputFields">
         <div className="title">
-          <h1>REGISTER</h1>
+          <h1 className="registerTitle">REGISTER</h1>
         </div>
         <div className="inputsContainer">
           <input

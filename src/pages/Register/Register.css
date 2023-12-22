@@ -81,7 +81,7 @@
 
     .registerBtn {
         width: 30vw;
-        height: 3.8vh;
+        height: 5vh;
         margin-top: 6vh;
         font-size: 1.2em;
     }
@@ -90,4 +90,19 @@
   .password {
     margin: 1vh;
   }
+}
+
+@media screen and (max-width: 767px) and (orientation: landscape) {
+    .backBtn {
+        height: 10vh;
+    }
+
+    .registerBtn {
+        width: 13vw;
+        height: 10vh;
+    }
+
+    .registerTitle {
+        height: 13vh;
+    }
 }
