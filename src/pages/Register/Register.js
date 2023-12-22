@@ -8,28 +8,32 @@ function Login() {
   const navigate = useNavigate();
   const [loginMessage, setLoginMessage] = useState("");
 
-  async function login1() {
+  const apiUrl = process.env.REACT_APP_ENV === 'production'
+? 'https://playlist-backend-qwwb.onrender.com'
+: 'http://localhost:3002';
+
+  async function register() {
     setLoginMessage("");
     if (userNameEntered.current.value && passwordEntered.current.value) {
-      const response = await fetch(
-        "https://playlist-backend-qwwb.onrender.com/api/users/login",
-        {
-          method: "POST",
-          headers: { "Content-type": "application/json" },
-          body: JSON.stringify({
-            username: userNameEntered.current.value,
-            password: passwordEntered.current.value,
-          }),
-        }
-      );
+      const response = await fetch(`${apiUrl}/api/users/register`, {
+        method: "POST",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify({
+          username: userNameEntered.current.value,
+          password: passwordEntered.current.value,
+        }),
+      });
       const status = response.status;
-      console.log(status);
-      console.log(response);
+      // console.log("🚀 ~ file: Register.js:23 ~ register ~ response:", response)
+      // console.log("🚀 ~ file: Register.js:23 ~ register ~ status:", status)
       const data = await response.json();
+      console.log("🚀 ~ file: Register.js:26 ~ register ~ data:", data)
+      console.log("response:",response)
       if (status === 200) {
         localStorage.setItem("accessToken", JSON.stringify(data));
         navigate("/Home");
       } else {
+        console.log("message:", data.message)
         setLoginMessage("Invalid username or password!");
       }
     } else {
@@ -37,51 +41,38 @@ function Login() {
     }
   }
 
-  function register() {
-    setLoginMessage("");
-    if (userNameEntered.current.value && passwordEntered.current.value) {
-      fetch("https://playlist-backend-qwwb.onrender.com/api/users/register", {
-        method: "POST",
-        headers: { "Content-type": "application/json" },
-        body: JSON.stringify({
-          username: userNameEntered.current.value,
-          password: passwordEntered.current.value,
-        }),
-      })
-        .then((res) => res.json())
-        .then((data) => console.log(data));
-      setLoginMessage("Please enter the login button");
-    } else {
-      setLoginMessage("Please enter username and password");
-    }
+  function back() {
+    navigate("/");
   }
 
   return (
-    <div className="login">
+    <div className="register_container">
+      <div className="back_container">
+        <button className="backBtn" onClick={back}>
+          {"Back >"}
+        </button>
+      </div>
       <div className="inputFields">
         <div className="title">
           <h1>REGISTER</h1>
         </div>
         <div className="inputsContainer">
-        <input
-          className="userName"
-          type="text"
-          ref={userNameEntered}
-          placeholder="Enter username"
-        />
-        <input
-          className="password"
-          type="text"
-          ref={passwordEntered}
-          placeholder="Enter password"
-        />
-         <button type="button" className="registerButton" onClick={login1}>
-          Sign Up
-        </button>
+          <input
+            className="userName"
+            type="text"
+            ref={userNameEntered}
+            placeholder="Enter username"
+          />
+          <input
+            className="password"
+            type="text"
+            ref={passwordEntered}
+            placeholder="Enter password"
+          />
+          <button type="button" className="registerBtn" onClick={register}>
+            Sign Up
+          </button>
         </div>
-        {/* <button type="button" className="registerButton" onClick={register}>
-          Sign Up
-        </button> */}
         <p className="errorMessage">{loginMessage}</p>
       </div>
     </div>

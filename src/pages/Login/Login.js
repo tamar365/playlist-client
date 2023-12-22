@@ -2,6 +2,10 @@ import "./Login.css";
 import { useRef, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
+const apiUrl = process.env.REACT_APP_ENV === 'production'
+? 'https://playlist-backend-qwwb.onrender.com'
+: 'http://localhost:3002';
+
 function Login() {
   const userNameEntered = useRef("");
   const passwordEntered = useRef("");
@@ -9,11 +13,12 @@ function Login() {
   const [loginMessage, setLoginMessage] = useState("");
 
   async function login1() {
+
     setLoginMessage("");
     if (userNameEntered.current.value && passwordEntered.current.value) {
       console.log(userNameEntered.current.value, passwordEntered.current.value)
       const response = await fetch(
-        "https://playlist-backend-qwwb.onrender.com/api/users/login",
+        `${apiUrl}/api/users/login`,
         {
           method: "POST",
           headers: { "Content-type": "application/json" },

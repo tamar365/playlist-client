@@ -12,6 +12,8 @@ import newSongFuncContext from "../../contexts/newSongFuncContext";
 import removeSongFuncContext from "../../contexts/removeSongFuncContext";
 import isVideoPlayedContext from "../../contexts/isVideoPlayedContext";
 
+const apiUrl = process.env.REACT_APP_API_URL;
+
 function App() {
   const [chosenSongs, setChosenSongs] = useState([]);
   const [idVideo, setIdVideo] = useState("");
@@ -20,7 +22,7 @@ function App() {
 
   try {
     useEffect(() => {
-      fetch("https://playlist-backend-qwwb.onrender.com/api/playlists", {
+      fetch(`${apiUrl}/api/playlists`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -39,7 +41,7 @@ function App() {
   }
 
   const getSongs = (userInput) => {
-    fetch(`https://playlist-backend-qwwb.onrender.com/api/search/${userInput}`)
+    fetch(`${apiUrl}/api/search/${userInput}`)
       .then((response) => response.json())
       .then((data) =>
         setSongs(
@@ -65,7 +67,7 @@ function App() {
   const newSongFunc = (poem) => {
     const songName = poem.split("%")[0];
     const id = poem.split("%")[1];
-    fetch("https://playlist-backend-qwwb.onrender.com/api/songs/newsong", {
+    fetch(`${apiUrl}/api/songs/newsong`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -76,7 +78,7 @@ function App() {
       .then((response) => response.json())
       .then((data) =>
         fetch(
-          "https://playlist-backend-qwwb.onrender.com/api/playlists/addToPlaylist",
+          `${apiUrl}/api/playlists/addToPlaylist`,
           {
             method: "POST",
             headers: {
@@ -92,7 +94,7 @@ function App() {
   };
 
   const removeSongFunc = (id) => {
-    fetch(`https://playlist-backend-qwwb.onrender.com/api/playlists/${id}`, {
+    fetch(`${apiUrl}/api/playlists/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
