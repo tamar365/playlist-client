@@ -12,7 +12,9 @@ import newSongFuncContext from "../../contexts/newSongFuncContext";
 import removeSongFuncContext from "../../contexts/removeSongFuncContext";
 import isVideoPlayedContext from "../../contexts/isVideoPlayedContext";
 
-const apiUrl = process.env.REACT_APP_API_URL;
+const apiUrl = process.env.REACT_APP_ENV === 'production'
+? 'https://playlist-backend-qwwb.onrender.com'
+: 'http://localhost:3002';
 
 function App() {
   const [chosenSongs, setChosenSongs] = useState([]);
