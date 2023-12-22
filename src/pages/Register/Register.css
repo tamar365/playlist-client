@@ -1,5 +1,5 @@
-.register_container{
-    height:fit-content;
+.register_container {
+    height: fit-content;
     width: 45vw;
     text-align: center;
     border: 5px solid #ff6b14;
@@ -62,4 +62,32 @@
     -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
     box-shadow: inset 0px 0px 5px #c1c1c1;
     outline: none;
+}
+
+@media screen and (max-width: 380px) {
+    .register_container {
+        margin: auto;
+        height: auto;
+        width: 60vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .back_container{
+        width: 60vw;
+    }
+
+    .registerBtn {
+        width: 30vw;
+        height: 3.8vh;
+        margin-top: 6vh;
+        font-size: 1.2em;
+    }
+
+    .userName,
+  .password {
+    margin: 1vh;
+  }
 }
