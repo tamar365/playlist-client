@@ -2,9 +2,9 @@ import "./Login.css";
 import { useRef, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
-const apiUrl = process.env.REACT_APP_ENV === 'production'
-? 'https://playlist-backend-qwwb.onrender.com'
-: 'http://localhost:3002';
+const apiUrl = process.env.REACT_APP_ENV === 'development'
+? 'http://localhost:3002'
+: 'https://playlist-backend-qwwb.onrender.com';
 
 function Login() {
   const userNameEntered = useRef("");
