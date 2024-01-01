@@ -30,7 +30,7 @@ h4 {
 
 }
 
-@media screen and (min-aspect-ratio: 16/9) {
+@media screen and (max-width: 767px) and (orientation: landscape) {
     .additemform {
         border: 2px solid #ff6b14;
         height: 65vh;
