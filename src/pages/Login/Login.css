@@ -13,7 +13,7 @@
 .title {
   text-align: center;
   color: #fff;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 
 .password {
@@ -54,12 +54,12 @@ button:active {
 .loginButton {
   background: radial-gradient(rgba(243, 242, 242, 0.3));
   box-shadow: inset 0px 0px 10px #504b4b;
-  height: 8vh;
+  height: 6vh;
   width: 10vw;
   border-radius: 10px;
   font-weight: bolder;
   font-family: 'Patrick Hand', cursive;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   cursor: pointer;
   margin-top: 5vh;
 }
